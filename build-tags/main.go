@@ -13,7 +13,9 @@ func byHandler(w http.ResponseWriter, r *http.Request) {
 func main() {
 	http.HandleFunc("/by", byHandler)
 
-	if err := http.ListenAndServe(":8080", nil); err != nil {
+	addr := ":8080"
+	log.Printf("server starting on %s", addr)
+	if err := http.ListenAndServe(addr, nil); err != nil {
 		log.Fatal(err)
 	}
 }
