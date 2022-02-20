@@ -12,3 +12,15 @@ Miki Tebeka <miki@353solutions.com>
 - Build tags
     - URL: TBD
     - [code](./build-tags/)
+- Cross Compile
+    - URL: TBD
+    - [code](./cross-compile/)
+- Embed
+    - URL: TBD
+    - [code](./embed/)
+- Generate
+    - URL: TBD
+    - [code](./generate/)
+- Inject
+    - URL: TBD
+    - [code](./inject/)
