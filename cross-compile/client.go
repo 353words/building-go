@@ -2,6 +2,7 @@ package main
 
 import (
 	"flag"
+	"fmt"
 	"io"
 	"log"
 	"net/http"
@@ -9,7 +10,11 @@ import (
 )
 
 func main() {
-	flag.Parse() // Support -h
+	flag.Usage = func() {
+		fmt.Fprintf(os.Stderr, "usage: quotes")
+		flag.PrintDefaults()
+	}
+	flag.Parse()
 
 	resp, err := http.Get("https://quotamiki.appspot.com/quote")
 	if err != nil {
@@ -19,5 +24,8 @@ func main() {
 	if resp.StatusCode != http.StatusOK {
 		log.Fatalf("error: %s", resp.Status)
 	}
-	io.Copy(os.Stdout, resp.Body)
+
+	if _, err := io.Copy(os.Stdout, resp.Body); err != nil {
+		log.Fatalf("error: %s", err)
+	}
 }

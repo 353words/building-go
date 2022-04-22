@@ -1,6 +1,6 @@
-//go:build prof
+//go:build profile
 
 package main
 
-// Will export /debug/pprof
+// Will export /debug/pprof/
 import _ "net/http/pprof"

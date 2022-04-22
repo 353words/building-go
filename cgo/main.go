@@ -6,7 +6,18 @@ import (
 	"net/http"
 )
 
+func healthCheck() error {
+	// TODO
+	return nil
+}
+
 func healthHandler(w http.ResponseWriter, r *http.Request) {
+	if err := healthCheck(); err != nil {
+		log.Printf("error: %s", err)
+		http.Error(w, "health check failed", http.StatusInternalServerError)
+		return
+	}
+
 	fmt.Fprintln(w, "OK")
 }
 

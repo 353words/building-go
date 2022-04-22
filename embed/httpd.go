@@ -32,13 +32,13 @@ func getTime(name string, r *http.Request) (time.Time, error) {
 func (s *Server) getMetrics(w http.ResponseWriter, r *http.Request) {
 	start, err := getTime("start", r)
 	if err != nil {
-		http.Error(w, "bad time", http.StatusBadRequest)
+		http.Error(w, "bad start time", http.StatusBadRequest)
 		return
 	}
 
 	end, err := getTime("end", r)
 	if err != nil {
-		http.Error(w, "bad time", http.StatusBadRequest)
+		http.Error(w, "bad end time", http.StatusBadRequest)
 		return
 	}
 
