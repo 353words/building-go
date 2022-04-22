@@ -6,6 +6,9 @@ Miki Tebeka <miki@353solutions.com>
 
 ## Videos
 
+- Inject
+    - URL: TBD
+    - [code](./inject/)
 - `CGO_ENABLED`
     - URL: TBD
     - [code](./cgo)
@@ -21,9 +24,6 @@ Miki Tebeka <miki@353solutions.com>
 - Generate
     - URL: TBD
     - [code](./generate/)
-- Inject
-    - URL: TBD
-    - [code](./inject/)
 - Race
     - URL: TBD
     - [code](./race/)
