@@ -6,16 +6,17 @@ import (
 	"net/http"
 )
 
-type Counter uint64
+var (
+	counter int64
+)
 
-func (c *Counter) ServeHTTP(w http.ResponseWriter, r *http.Request) {
-	*c++
-	fmt.Fprintln(w, *c)
+func handler(w http.ResponseWriter, r *http.Request) {
+	counter++
+	fmt.Fprintln(w, counter)
 }
 
 func main() {
-	var c Counter
-	http.Handle("/count", &c)
+	http.HandleFunc("/", handler)
 
 	addr := ":8080"
 	log.Printf("server starting on %s", addr)

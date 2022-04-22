@@ -71,3 +71,17 @@ version=1.2.3 make
 ./inject -version
 
 ## race
+
+main.go
+go run .
+curl http://localhost:8080
+curl http://localhost:8080
+https://github.com/rakyll/hey
+hey -n 1000 http://localhost:8080
+curl http://localhost:8080
+
+go run -race .
+hey -n 1000 http://localhost:8080
+
+Fix with sync atomic
+https://go.dev/doc/articles/race_detector#Runtime_Overheads
